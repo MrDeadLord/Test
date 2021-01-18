@@ -9,6 +9,7 @@ namespace DeadLords
     [RequireComponent(typeof(AICharacterControl))]
     public class Bot : MonoBehaviour, ISetDamage
     {
+        #region Переменные
         [SerializeField] private float _hp = 100;
         private bool _isDead = false;
         public NavMeshAgent agent { get; private set; }
@@ -21,7 +22,9 @@ namespace DeadLords
         [Space(10)] [SerializeField] [Tooltip("Игрок")] private Transform _target;
         [SerializeField] [Tooltip("Оружие бота")] private Weapons _weapon;
         [SerializeField] [Tooltip("Патроны оружия")] private Ammunition _ammo;
+        #endregion
 
+        #region Unity-time
         void Start()
         {
             agent = GetComponent<NavMeshAgent>();
@@ -52,6 +55,7 @@ namespace DeadLords
                 }
             }
         }
+        #endregion
 
         /// <summary>
         /// Случайная генерация точек для пути NPC

@@ -29,6 +29,7 @@ namespace DeadLords
 
                     bullet.GetComponent<Rigidbody>().AddForce(_barrel.forward * _force);
                     bullet.Name = "Bullet";
+
                     _ammoCopacity[0] -= 1;
                     _canFire = false;
                     _timer.Start(_rechargeTime);
